@@ -1,4 +1,10 @@
-import tensorflow
+import tensorflow, os
+resolver = tensorflow.distribute.cluster_resolver.TPUClusterResolver(tpu='grpc://' + os.environ['COLAB_TPU_ADDR'])
+tensorflow.config.experimental_connect_to_cluster(resolver)
+# This is the TPU initialization code that has to be at the beginning.
+tensorflow.tpu.experimental.initialize_tpu_system(resolver)
+print("All devices: ", tensorflow.config.list_logical_devices('TPU'))
+
 tpu = tensorflow.distribute.cluster_resolver.TPUClusterResolver()
 tensorflow.config.experimental_connect_to_cluster(tpu)
 tensorflow.tpu.experimental.initialize_tpu_system(tpu)
