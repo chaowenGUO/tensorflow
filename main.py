@@ -2,7 +2,7 @@ import tensorflow
 tpu = tensorflow.distribute.cluster_resolver.TPUClusterResolver()
 tensorflow.config.experimental_connect_to_cluster(tpu)
 tensorflow.tpu.experimental.initialize_tpu_system(tpu)
-tpu_strategy = tensorflow.distribute.experimental.TPUStrategy(tpu)
+tpu_strategy = tensorflow.distribute.TPUStrategy(tpu)
 mnist = tensorflow.keras.datasets.mnist
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 x_train, x_test = x_train / 255, x_test / 255
