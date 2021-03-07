@@ -1,11 +1,11 @@
-colab
-!/opt/bin/nvidia-smi
-!free -g
-!git clone https://chaowenguo:password@github.com/chaowenguo/tensorflow
-%cd tensorflow
-!python main.py
-!git add model
-!git config user.name dummy
-!git config user.email dummy
-!git commit --allow-empty-message -m ''
+colab<br>
+!/opt/bin/nvidia-smi<br>
+!free -g<br>
+!git clone https://chaowenguo:password@github.com/chaowenguo/tensorflow<br>
+%cd tensorflow<br>
+!python main.py<br>
+!git add model<br>
+!git config user.name dummy<br>
+!git config user.email dummy<br>
+!git commit --allow-empty-message -m ''<br>
 !git push
