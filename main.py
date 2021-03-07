@@ -1,4 +1,4 @@
-import tensorflow, os
+import tensorflow
 tpu = tensorflow.distribute.cluster_resolver.TPUClusterResolver()
 tensorflow.config.experimental_connect_to_cluster(tpu)
 tensorflow.tpu.experimental.initialize_tpu_system(tpu)
