@@ -1,9 +1,7 @@
-import tensorflow, os
-resolver = tensorflow.distribute.cluster_resolver.TPUClusterResolver(tpu='grpc://' + os.environ['COLAB_TPU_ADDR'])
-tensorflow.config.experimental_connect_to_cluster(resolver)
-# This is the TPU initialization code that has to be at the beginning.
-tensorflow.tpu.experimental.initialize_tpu_system(resolver)
-print("All devices: ", tensorflow.config.list_logical_devices('TPU'))
+import tensorflow#, os
+#resolver = tensorflow.distribute.cluster_resolver.TPUClusterResolver(tpu='grpc://' + os.environ['COLAB_TPU_ADDR'])
+#tensorflow.config.experimental_connect_to_cluster(resolver)
+#tensorflow.tpu.experimental.initialize_tpu_system(resolver)
 mnist = tensorflow.keras.datasets.mnist
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 x_train, x_test = x_train / 255, x_test / 255
